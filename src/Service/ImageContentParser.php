@@ -18,15 +18,11 @@ class ImageContentParser
 
         $imageTypeByte = array_shift($bytes);
 
-        switch ($imageTypeByte) {
-            case 0xFF:
-                return 'jpg';
-            case 0x89:
-                return 'png';
-            case 0x47:
-                return 'gif';
-        }
-
-        return null;
+        return match ($imageTypeByte) {
+            0xFF => 'jpg',
+            0x89 => 'png',
+            0x47 => 'gif',
+            default => null,
+        };
     }
 }

@@ -10,7 +10,7 @@ class InvalidImageException extends \Exception
     {
         return new self(
             'Cannot get eTag of image #' . $image->getId() . ' without content. ' .
-            'You have to set content first.'
+            'You have to set content first.',
         );
     }
 }

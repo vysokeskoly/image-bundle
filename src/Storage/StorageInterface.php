@@ -4,10 +4,7 @@ namespace VysokeSkoly\ImageBundle\Storage;
 
 interface StorageInterface
 {
-    /**
-     * @return bool|mixed|null
-     */
-    public function read(string $key);
+    public function read(string $key): mixed;
 
     /**
      * @param resource $resource

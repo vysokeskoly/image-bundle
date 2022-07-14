@@ -14,21 +14,12 @@ class ImageGenerator
     public const PNG_COMPRESSION_LEVEL = 9; // 0 - 9
     public const PNG_COMPRESSION_FILTER = 7; // 0 - 9
 
-    private ImagineInterface $imagine;
-    private CropConfigParser $cropConfigParser;
-    private ImageContentParser $contentParser;
-    private array $formats;
-
     public function __construct(
-        ImagineInterface $imagine,
-        CropConfigParser $cropConfigParser,
-        ImageContentParser $contentParser,
-        array $formats
+        private ImagineInterface $imagine,
+        private CropConfigParser $cropConfigParser,
+        private ImageContentParser $contentParser,
+        private array $formats,
     ) {
-        $this->imagine = $imagine;
-        $this->cropConfigParser = $cropConfigParser;
-        $this->contentParser = $contentParser;
-        $this->formats = $formats;
     }
 
     public function addFormat(string $name, array $config): void
@@ -65,7 +56,7 @@ class ImageGenerator
         /** @var ImageInterface $thumbnail */
         $thumbnail = $image->thumbnail(
             new Box($config['width'], $config['height']),
-            ImageInterface::THUMBNAIL_OUTBOUND
+            ImageInterface::THUMBNAIL_OUTBOUND,
         );
 
         return $thumbnail->get(
@@ -74,7 +65,7 @@ class ImageGenerator
                 'jpeg_quality' => self::JPEG_QUALITY,
                 'png_compression_level' => self::PNG_COMPRESSION_LEVEL,
                 'png_compression_filter' => self::PNG_COMPRESSION_FILTER,
-            ]
+            ],
         );
     }
 }

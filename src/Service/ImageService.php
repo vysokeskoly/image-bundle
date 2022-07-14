@@ -12,20 +12,11 @@ class ImageService
     public const IMAGE_CODE_CACHED = 304;
     public const IMAGE_CODE_NOT_CACHED = 200;
 
-    private ImageRepositoryInterface $imageRepository;
-
-    private StorageInterface $storage;
-
-    private ImageGenerator $imageGenerator;
-
     public function __construct(
-        ImageRepositoryInterface $imageRepository,
-        StorageInterface $storage,
-        ImageGenerator $imageGenerator
+        private ImageRepositoryInterface $imageRepository,
+        private StorageInterface $storage,
+        private ImageGenerator $imageGenerator,
     ) {
-        $this->imageRepository = $imageRepository;
-        $this->storage = $storage;
-        $this->imageGenerator = $imageGenerator;
     }
 
     public function addFormat(string $name, array $config): void
@@ -33,10 +24,7 @@ class ImageService
         $this->imageGenerator->addFormat($name, $config);
     }
 
-    /**
-     * @param int|string $key
-     */
-    public function getImage($key, string $slug, string $extension, ?string $format = null): ImageInterface
+    public function getImage(int|string $key, string $slug, string $extension, ?string $format = null): ImageInterface
     {
         $image = $this->imageRepository->findByUrl($key, $slug, $extension);
 

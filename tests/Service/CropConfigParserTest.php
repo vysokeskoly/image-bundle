@@ -37,7 +37,7 @@ class CropConfigParserTest extends AbstractTestCase
         int $x,
         int $y,
         int $width,
-        int $height
+        int $height,
     ): void {
         $formatConfig = [
             'crop' => $cropConfig,
