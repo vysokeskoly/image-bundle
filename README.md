@@ -1,6 +1,12 @@
 Image Bundle
 ============
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/vysokeskoly/image-bundle.svg)](https://packagist.org/packages/vysokeskoly/image-bundle)
+[![License](https://img.shields.io/packagist/l/vysokeskoly/image-bundle.svg)](https://packagist.org/packages/vysokeskoly/image-bundle)
+[![Checks](https://github.com/vysokeskoly/image-bundle/actions/workflows/checks.yaml/badge.svg)](https://github.com/vysokeskoly/image-bundle/actions/workflows/checks.yaml)
+[![Build](https://github.com/vysokeskoly/image-bundle/actions/workflows/php-checks.yaml/badge.svg)](https://github.com/vysokeskoly/image-bundle/actions/workflows/php-checks.yaml)
+[![Coverage Status](https://coveralls.io/repos/github/vysokeskoly/image-bundle/badge.svg)](https://coveralls.io/github/vysokeskoly/image-bundle)
+
 Changelog
 ---------
 See CHANGELOG.md.
@@ -13,7 +19,7 @@ Installation
 Download using *composer*
 
     "require": {
-        "vysokeskoly/image-bundle" : "^4.0"
+        "vysokeskoly/image-bundle" : "^5.0"
     },
 
 ### Step 2
