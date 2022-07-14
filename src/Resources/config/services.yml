@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $formats: "%vysokeskoly.image.formats%"
+            Imagine\Image\ImagineInterface: '@Imagine\Gmagick\Imagine'
+
+    VysokeSkoly\ImageBundle\:
+        resource: ../../{Service}
+
+    Imagine\Gmagick\Imagine: ~

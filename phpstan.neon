@@ -1,0 +1,5 @@
+parameters:
+    checkMissingIterableValueType: false
+    excludePaths:
+        - src/DependencyInjection/Configuration.php
+    ignoreErrors:
