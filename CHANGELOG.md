@@ -3,6 +3,8 @@
 <!-- There should always be "Unreleased" section at the beginning. -->
 
 ## Unreleased
+
+## 6.0.0 - 2022-07-14
 - Allow Symfony 6
 - Drop support for Symfony 4
 - Require php 8.1
