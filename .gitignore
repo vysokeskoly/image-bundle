@@ -1,0 +1,11 @@
+.idea
+
+vendor
+bin
+composer.lock
+.phpunit.result.cache
+
+reports/
+code-coverage/
+
+tools/*/vendor/
