@@ -6,8 +6,5 @@ use VysokeSkoly\ImageBundle\Entity\ImageInterface;
 
 interface ImageRepositoryInterface
 {
-    /**
-     * @param int|string $key
-     */
-    public function findByUrl($key, string $slug, string $extension): ImageInterface;
+    public function findByUrl(int|string $key, string $slug, string $extension): ImageInterface;
 }

@@ -16,11 +16,11 @@ class ImageServiceTest extends AbstractTestCase
 {
     private ImageService $imageService;
     /** @var ImageRepositoryInterface|m\MockInterface */
-    private $imageRepository;
+    private ImageRepositoryInterface $imageRepository;
     /** @var StorageInterface|m\MockInterface */
-    private $storage;
+    private StorageInterface $storage;
     /** @var ImageGenerator|m\MockInterface */
-    private $imageGenerator;
+    private ImageGenerator $imageGenerator;
 
     protected function setUp(): void
     {
@@ -241,10 +241,8 @@ class ImageServiceTest extends AbstractTestCase
         $this->imageService->getImageStatusCode($request, $image);
     }
 
-    /**
-     * @return ImageInterface|m\MockInterface
-     */
-    private function createImageMock()
+    /** @return ImageInterface|m\MockInterface */
+    private function createImageMock(): ImageInterface
     {
         return m::mock(ImageInterface::class);
     }

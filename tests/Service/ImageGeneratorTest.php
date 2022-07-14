@@ -17,9 +17,9 @@ class ImageGeneratorTest extends AbstractTestCase
 {
     private ImageGenerator $imageGenerator;
     /** @var ImageContentParser|m\MockInterface */
-    private $imageContentParser;
+    private ImageContentParser $imageContentParser;
     /** @var Imagine|m\MockInterface */
-    private $imagine;
+    private Imagine $imagine;
 
     protected function setUp(): void
     {
@@ -42,7 +42,7 @@ class ImageGeneratorTest extends AbstractTestCase
             $this->imagine,
             new CropConfigParser(),
             $this->imageContentParser,
-            $formats
+            $formats,
         );
     }
 
@@ -60,7 +60,7 @@ class ImageGeneratorTest extends AbstractTestCase
 
         $this->assertSame(
             'this-is-thumbnail',
-            $this->imageGenerator->generate('original-image-content', 'ext', $format)
+            $this->imageGenerator->generate('original-image-content', 'ext', $format),
         );
     }
 
@@ -73,10 +73,8 @@ class ImageGeneratorTest extends AbstractTestCase
         ];
     }
 
-    /**
-     * @return ImageInterface|m\MockInterface
-     */
-    private function createThumbnailMock(int $width, int $height)
+    /** @return ImageInterface|m\MockInterface */
+    private function createThumbnailMock(int $width, int $height): ImageInterface
     {
         /** @var ImageInterface|m\MockInterface $thumbnail */
         $thumbnail = m::mock(ImageInterface::class);
@@ -121,7 +119,7 @@ class ImageGeneratorTest extends AbstractTestCase
                     'x2' => 300,
                     'y2' => 500,
                 ],
-            ]
+            ],
         );
 
         $thumbnail = $this->createThumbnailMock(40, 20);
@@ -145,7 +143,7 @@ class ImageGeneratorTest extends AbstractTestCase
 
         $this->assertSame(
             'this-is-thumbnail',
-            $this->imageGenerator->generate('original-image-content', 'ext', 'dynamic')
+            $this->imageGenerator->generate('original-image-content', 'ext', 'dynamic'),
         );
     }
 }
